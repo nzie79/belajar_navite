@@ -32,6 +32,9 @@ export default function RootLayout() {
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
+        <Stack.Screen name='/smkpesat/siswa' />
+        <Stack.Screen name='/smkpesat/projek'/>
+        <Stack.Screen name='/smkpesat/detailprojek'/>
       </Stack>
       <StatusBar style="auto" />
     </ThemeProvider>

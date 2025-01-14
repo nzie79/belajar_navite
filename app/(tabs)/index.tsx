@@ -1,74 +1,79 @@
-import { Image, StyleSheet, Platform } from 'react-native';
-
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+import { EvilIcons } from '@expo/vector-icons';
+import { Image, View, Text } from 'react-native';
+import { ScrollView } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import tw from 'twrnc';
 
 export default function HomeScreen() {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12'
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this starter app.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          When you're ready, run{' '}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+    <SafeAreaView>
+      <ScrollView>
+
+        <Image source={require('../../assets/images/y.jpg')} style={tw`w-full h-109 absolute`} />
+        <View style={tw`justify-center items-center p-4`}></View>
+
+
+        <View style={tw`bg-yellow-300 rounded-t-xl p-10 mt-80`}>
+          <Text style={tw`text-2xl font-bold text-black`}>Nurfauziah</Text>
+
+
+
+          <View style={tw`flex-row justify-between items-center mt-2`}>
+            <Text style={tw`text-sm text-gray-600`}>Programer</Text>
+            <View style={tw`flex-row items-center`}>
+              <EvilIcons name="location" size={20} color="black" style={tw`mr-1`} />
+              <Text style={tw`text-sm text-gray-600`}>Bogor</Text>
+            </View>
+          </View>
+
+          <View style={tw`flex-row justify-between mt-6`}>
+            <View style={tw`items-center`}>
+              <Text style={tw`text-lg font-bold`}>11</Text>
+              <Text style={tw`text-gray-600 text-sm`}>Kelas</Text>
+            </View>
+            <View style={tw`items-center`}>
+              <Text style={tw`text-lg font-bold`}>RPL</Text>
+              <Text style={tw`text-gray-600 text-sm`}>Jurusan</Text>
+            </View>
+            <View style={tw`items-center`}>
+              <Text style={tw`text-lg font-bold`}>100</Text>
+              <Text style={tw`text-gray-600 text-sm`}>Jumlah Proyek</Text>
+            </View>
+          </View>
+
+          <View style={tw`bg-black py-2 px-10 mt-9 rounded-lg self-start`}>
+            <Text style={tw`text-white text-center font-bold`}>Hire Me</Text>
+          </View>
+
+
+          <View style={tw`flex-row mt-4`}>
+            <EvilIcons name='sc-facebook' size={30} style={tw`m-2`} />
+            <EvilIcons name='sc-linkedin' size={30} style={tw`m-2`} />
+            <EvilIcons name='sc-twitter' size={30} style={tw`m-2`} />
+          </View>
+
+          <View style={tw`mt-4`}>
+            <Text style={tw`text-2xl font-bold text-black `}>
+              about
+            </Text>
+            <Text style={tw`text-sm text-gray-600 mt-3`}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos facere accusantium ipsum minima maxime modi earum alias, dicta enim voluptatem voluptatum obcaecati dolores ab saepe, totam consectetur odio mollitia aspernatur.</Text>
+          </View>
+
+          <View style={tw`mt-4`}>
+            <Text style={tw`text-2xl font-bold text-black `}>
+              projek
+            </Text>
+            <Text style={tw`text-sm text-gray-600 mt-3`}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos facere accusantium ipsum minima maxime modi earum alias, dicta enim voluptatem voluptatum obcaecati dolores ab saepe, totam consectetur odio mollitia aspernatur.</Text>
+          </View>
+
+          <View style={tw`mt-4`}>
+            <Text style={tw`text-2xl font-bold text-black `}>
+              tools
+            </Text>
+            <Text style={tw`text-sm text-gray-600 mt-3`}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos facere accusantium ipsum minima maxime modi earum alias, dicta enim voluptatem voluptatum obcaecati dolores ab saepe, totam consectetur odio mollitia aspernatur.</Text>
+          </View>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
-  },
-});
